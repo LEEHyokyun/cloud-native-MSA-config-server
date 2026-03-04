@@ -18,10 +18,15 @@ spring:
     name: config-server
   profiles:
     active: native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
-        native:
+        native: # 탐색 대상
           search-locations:
             - C:\study\cloud-native-msa-config
             - C:\study\cloud-native-msa-config\ecommerce
@@ -49,6 +54,12 @@ spring:
 #    redis:
 #      host: localhost
 #      port: 6379
+
+managerment:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httpexchanges, busrefresh
 
 logging:
   level:

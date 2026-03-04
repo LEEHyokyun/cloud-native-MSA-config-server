@@ -1,6 +1,9 @@
 server:
   port: 8888 #Spring Cloud - Config 서버 포트
 
+encrypt:
+  key: dev_secret_key
+
 eureka:
   instance:
     hostname: localhost

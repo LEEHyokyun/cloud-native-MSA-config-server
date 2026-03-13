@@ -29,15 +29,15 @@ spring:
   cloud:
     config:
       server:
-        native: # 탐색 대상
-          search-locations:
-            - C:\study\cloud-native-msa-config
-            - C:\study\cloud-native-msa-config\ecommerce
-        # git:
-          # uri: https://github.com/LEEHyokyun/cloud-native-MSA-config
-          # search-paths:
-            # - . # global
-            # - ecommerce # ecommerce
+#        native: # 탐색 대상
+#          search-locations:
+#            - C:\study\cloud-native-msa-config
+#            - C:\study\cloud-native-msa-config\ecommerce
+         git:
+           uri: https://github.com/LEEHyokyun/cloud-native-MSA-config
+           search-paths:
+             - . # global
+             - ecommerce # ecommerce
   #  datasource:
 #    url: jdbc:mysql://127.0.0.1:3306/users #cloud-native-msa-user-mysql
 #    driver-class-name: com.mysql.cj.jdbc.Driver

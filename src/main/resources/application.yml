@@ -6,7 +6,6 @@ encrypt:
 
 eureka:
   instance:
-    hostname: localhost
     #hostname: localhost
     #prefer-ip-address: true
     instance-id: ${spring.application.name}
@@ -14,15 +13,18 @@ eureka:
     register-with-eureka: true #Cluster 환경에서 본인의 서버 주소를 default 도메인의 다른 서버에 본인의 주소를 알림, 단일 서버에서는 false
     fetch-registry: true #메모리에 올려진 레지스트리 목록을 주기적으로 갱신, 클러스터 환경일 경우 true 필요
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://eureka:8761/eureka
+#      defaultZone: http://127.0.0.1:8761/eureka
 
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
+#  profiles:
+#    active: native
+    profiles:
+      active: git
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
